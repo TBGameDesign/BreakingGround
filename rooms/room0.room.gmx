@@ -412,6 +412,8 @@
     <instance objName="obj_light" x="224" y="0" name="inst_8A094172" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree" x="96" y="0" name="inst_BB6F645D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bucketMeter" x="64" y="96" name="inst_626280FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cavebot_left" x="832" y="672" name="inst_5F77C5BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cavebot_right" x="640" y="608" name="inst_ABDE12D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_bottom" x="32" y="0" w="32" h="32" xo="0" yo="0" id="10000001" name="inst_08D4528D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

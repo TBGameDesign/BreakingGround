@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-50</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -47,6 +47,10 @@ facing=1
 //0 -idle
 //1 -jump
 //2-6 walk
+
+//Movement
+spd = 8;
+acc = 2;
 </string>
           </argument>
         </arguments>
@@ -214,8 +218,76 @@ facing=1
           <argument>
             <kind>1</kind>
             <string>///Platform Movement
+var right = keyboard_check(vk_right);
+var left = keyboard_check(vk_left);
+var up = keyboard_check(vk_up);
+var up_release = keyboard_check_released(vk_up);
+var down = keyboard_check(vk_down);
+
 if fin=0
-{
+{   
+    if ( right || left ) {       
+        hspd += (right - left) * acc;         
+    } else {
+        if ( hspd != 0 ) {
+            hspd -= sign(hspd);
+        }
+    }
+    
+    if ( right ) {
+        if (place_meeting(x+hspd, y, obj_cavebottom)) {
+            while (!place_meeting(x+1, y, obj_cavebottom)) {
+            x += 1;
+            hspd = 0;
+        }
+        if ( place_meeting(x+hspd, y, obj_cavebot_left )) {
+            y -= 1;
+        }
+        x += hspd;    
+    }
+    if ( left &amp;&amp; place_meeting(x+hspd, y, obj_cavebot_right ) ) {
+        x += hspd;
+        y += hspd;
+    }
+    
+    if (hspd &gt; spd) hspd = spd;
+    if (hspd &lt; -spd) hspd = -spd;
+
+    
+if (!place_meeting(x, y+1, obj_cave)) {
+    vspd += 1.5;
+}
+
+// vertical colisions
+if (place_meeting(x, y+vspd, obj_cave)) {
+    while (!place_meeting(x, y+sign(vspd), obj_cave)) {
+    y += sign(vspd);
+    }
+    vspd = 0;
+}
+y += vspd;
+
+
+&amp;&amp; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     gs=10-(fill*0.5) // grounspeed calc - max speed reduced is four with this calc.. speed of 6 is lowest can go before can jump on stuff
     
     if !place_meeting(x,y+1,obj_cave) // if we are in the air
@@ -267,7 +339,7 @@ if fin=0
             x += sign(hspd); // add to our x value depending on which way we are going
         }
     }
-    
+ */   
     ///Handle Spacebar
         
         if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
