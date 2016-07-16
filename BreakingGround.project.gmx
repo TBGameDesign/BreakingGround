@@ -29,7 +29,9 @@
     <background>background\bg_bottom</background>
     <background>background\gradient</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pathEscape</path>
+  </paths>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_cave</object>
