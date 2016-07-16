@@ -6,6 +6,8 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_steveBody</sprite>
+    <sprite>sprites\spr_steveLegs</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_cavebottom</sprite>
     <sprite>sprites\spr_cave_bot_left</sprite>
