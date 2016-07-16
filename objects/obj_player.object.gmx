@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>collectWater=0
 dump=0
-fill=6
+fill=0
 frm=0
 frm_spd=0.5
 // Enum state machine
