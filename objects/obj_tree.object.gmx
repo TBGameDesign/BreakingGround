@@ -505,6 +505,7 @@ if ( curr_waterlevel &gt;= 321 ) {
     obj_player.fin=1
 }
 
+image_index=size;
 </string>
           </argument>
         </arguments>
