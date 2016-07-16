@@ -226,39 +226,59 @@ var down = keyboard_check(vk_down);
 
 if fin=0
 {   
+///Horizontal movement and collisions
     if ( right || left ) {       
-        hspd += (right - left) * acc;         
+        hspd += (right - left) * acc;
+        if (hspd &gt; spd) hspd = spd;
+        if (hspd &lt; -spd) hspd = -spd;         
     } else {
         if ( hspd != 0 ) {
             hspd -= sign(hspd);
         }
     }
     
+    //If Going to the right (combined collision scripts into movement)
     if ( right ) {
         if (place_meeting(x+hspd, y, obj_cavebottom)) {
             while (!place_meeting(x+1, y, obj_cavebottom)) {
-            x += 1;
+                x += 1;
+            }
             hspd = 0;
         }
         if ( place_meeting(x+hspd, y, obj_cavebot_left )) {
-            y -= 1;
+            x += 3;
+            y -= 3;
+            hspd = 0;
         }
         x += hspd;    
     }
-    if ( left &amp;&amp; place_meeting(x+hspd, y, obj_cavebot_right ) ) {
-        x += hspd;
-        y += hspd;
+    
+    //If Going to the left
+    if ( left ) {
+        if (place_meeting(x+hspd, y, obj_cavebottom)) {
+            while (!place_meeting(x-1, y, obj_cavebottom)) {
+                x -= 1;
+            }
+            hspd = 0;
+        }
+        if ( place_meeting(x+hspd, y, obj_cavebot_right )) {
+            x -= 3;
+            y -= 3;
+            hspd = 0;
+        }
+        x += hspd;    
     }
-    
-    if (hspd &gt; spd) hspd = spd;
-    if (hspd &lt; -spd) hspd = -spd;
 
-    
-if (!place_meeting(x, y+1, obj_cave)) {
-    vspd += 1.5;
-}
+/// vertical colisions and movement
 
-// vertical colisions
+//Vertical Movement
+
+if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
+        vspd = -24; 
+} else {
+        vspd += 2;
+}  
+
 if (place_meeting(x, y+vspd, obj_cave)) {
     while (!place_meeting(x, y+sign(vspd), obj_cave)) {
     y += sign(vspd);
@@ -268,15 +288,22 @@ if (place_meeting(x, y+vspd, obj_cave)) {
 y += vspd;
 
 
-&amp;&amp; 
+    ///Handle Spacebar
+        
+        if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
+            dump = 1
+            state=empty   
+        }
+        if ( keyboard_check_pressed(vk_space) &amp;&amp; !place_meeting(x,y,obj_tree) ) {
+            dump = 2
+            state=empty
+        }
+        if ( keyboard_check_released(vk_space)) {
+            dump = 0
+        }
 
-
-
-
-
-
-
-
+    }
+    
 
 
 
@@ -338,23 +365,9 @@ y += vspd;
         {
             x += sign(hspd); // add to our x value depending on which way we are going
         }
-    }
- */   
-    ///Handle Spacebar
-        
-        if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
-            dump = 1
-            state=empty
-            
-        }
-        if ( keyboard_check_pressed(vk_space) &amp;&amp; !place_meeting(x,y,obj_tree) ) {
-            dump = 2
-            state=empty
-        }
-        if ( keyboard_check_released(vk_space)) {
-            dump = 0
-        }
-    
+    }   
+
+*/    
     //
     /*
     frm_spd=0.5
@@ -369,7 +382,7 @@ y += vspd;
     //0 -idle
     //1 -jump
     //2-6 walk
-    
+/*    
     if state=idle and collectWater=0
         {
         legsfrm=0
@@ -437,10 +450,7 @@ y += vspd;
     //1 -jump
     //2-6 walk
     
-    
-    
-} //end of if fin=0
-
+}      //end of if fin=0
 
 </string>
           </argument>

@@ -6,15 +6,18 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_steveBody</sprite>
-    <sprite>sprites\spr_steveLegs</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_cavebottom</sprite>
-    <sprite>sprites\spr_cave_bot_left</sprite>
-    <sprite>sprites\spr_cave_top_left</sprite>
-    <sprite>sprites\spr_cave_bot_right</sprite>
-    <sprite>sprites\spr_cave_top_right</sprite>
-    <sprite>sprites\spr_cavetop_2</sprite>
+    <sprites name="Player">
+      <sprite>sprites\spr_steveBody</sprite>
+      <sprite>sprites\spr_steveLegs</sprite>
+    </sprites>
+    <sprites name="Cave">
+      <sprite>sprites\spr_cavebottom</sprite>
+      <sprite>sprites\spr_cave_bot_left</sprite>
+      <sprite>sprites\spr_cave_top_left</sprite>
+      <sprite>sprites\spr_cave_bot_right</sprite>
+      <sprite>sprites\spr_cave_top_right</sprite>
+      <sprite>sprites\spr_cavetop_2</sprite>
+    </sprites>
     <sprite>sprites\spr_bucket</sprite>
     <sprite>sprites\spr_bucketfill</sprite>
     <sprite>sprites\spr_waterdrop</sprite>
@@ -32,6 +35,7 @@
   <paths name="paths">
     <path>paths\pathEscape</path>
   </paths>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <objects name="cave_parts">
