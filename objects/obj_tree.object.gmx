@@ -467,8 +467,8 @@ image_index=size;
 
 
 // the droplets of water from bucket can grow the tree too, but not by much 1/20th
-if ( increment &gt;= 20 ) {
-    curr_waterlevel+=1;
+if ( increment &gt;= 1 ) {
+    curr_waterlevel+=2;
     increment=0;
 }
 

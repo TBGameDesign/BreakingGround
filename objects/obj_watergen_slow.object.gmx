@@ -53,7 +53,7 @@ lastspawnpoint = 0
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>60</string>
+            <string>45</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -110,7 +110,7 @@ lastspawnpoint = spawnpoint;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>10</string>
+            <string>4</string>
           </argument>
           <argument>
             <kind>4</kind>
