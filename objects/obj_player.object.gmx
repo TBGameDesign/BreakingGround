@@ -226,7 +226,7 @@ var down = keyboard_check(vk_down);
 
 if fin=0
 {   
-///Horizontal movement and collisions
+    ///Horizontal movement and collisions
     if ( right || left ) {       
         hspd += (right - left) * acc;
         if (hspd &gt; spd) hspd = spd;
@@ -239,34 +239,36 @@ if fin=0
     
     //If Going to the right (combined collision scripts into movement)
     if ( right ) {
-        if (place_meeting(x+hspd, y, obj_cavebottom)) {
-            while (!place_meeting(x+1, y, obj_cavebottom)) {
+        if ( place_meeting(x+hspd, y, obj_cave ) ) {
+            while (!place_meeting(x+1, y, obj_cave ) ) {
                 x += 1;
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_left )) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_left ) ) {
             x += 3;
             y -= 3;
             hspd = 0;
         }
-        x += hspd;    
+        x += hspd;
+        image_xscale = 1;    
     }
     
     //If Going to the left
     if ( left ) {
-        if (place_meeting(x+hspd, y, obj_cavebottom)) {
-            while (!place_meeting(x-1, y, obj_cavebottom)) {
+        if (place_meeting(x+hspd, y, obj_cave ) ) {
+            while (!place_meeting(x-1, y, obj_cave ) ) {
                 x -= 1;
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_right )) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_right ) ) {
             x -= 3;
             y -= 3;
             hspd = 0;
         }
-        x += hspd;    
+        x += hspd;
+        image_xscale = -1;    
     }
 
 /// vertical colisions and movement
@@ -279,30 +281,31 @@ if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
         vspd += 2;
 }  
 
-if (place_meeting(x, y+vspd, obj_cave)) {
+//Vetrical Collisions
+if (place_meeting(x, y+vspd+1, obj_cave)) {
     while (!place_meeting(x, y+sign(vspd), obj_cave)) {
-    y += sign(vspd);
+        y += sign(vspd);
     }
     vspd = 0;
 }
 y += vspd;
 
 
-    ///Handle Spacebar
+///Handle Spacebar
         
-        if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
-            dump = 1
-            state=empty   
-        }
-        if ( keyboard_check_pressed(vk_space) &amp;&amp; !place_meeting(x,y,obj_tree) ) {
-            dump = 2
-            state=empty
-        }
-        if ( keyboard_check_released(vk_space)) {
-            dump = 0
-        }
-
+    if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
+        dump = 1
+        state=empty   
     }
+    if ( keyboard_check_pressed(vk_space) &amp;&amp; !place_meeting(x,y,obj_tree) ) {
+        dump = 2
+        state=empty
+    }
+    if ( keyboard_check_released(vk_space)) {
+        dump = 0
+    }
+
+}
     
 
 
@@ -645,8 +648,8 @@ y += vspd;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(spr_steveLegs,legsfrm,x,y,facing,1,0,c_white,1)
-draw_sprite_ext(spr_steveBody,frm,x,y,facing,1,0,c_white,1)
+            <string>draw_sprite_ext(spr_steveLegs,legsfrm,x,y,image_xscale,1,0,c_white,1)
+draw_sprite_ext(spr_steveBody,frm,x,y,image_xscale,1,0,c_white,1)
 frm+=frm_spd
 legsfrm+=legsfrm_spd
 

@@ -41,10 +41,10 @@
     <objects name="cave_parts">
       <object>objects\obj_cave</object>
       <object>objects\obj_cavebottom</object>
-      <object>objects\obj_cavebot_left</object>
-      <object>objects\obj_cavebot_right</object>
       <object>objects\obj_cave_top_right</object>
       <object>objects\obj_cave_top_left</object>
+      <object>objects\obj_cavebot_right</object>
+      <object>objects\obj_cavebot_left</object>
     </objects>
     <object>objects\obj_watergen_slow</object>
     <object>objects\obj_water</object>
