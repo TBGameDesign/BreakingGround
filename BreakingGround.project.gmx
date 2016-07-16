@@ -34,15 +34,14 @@
   </paths>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_cave</object>
-    <object>objects\obj_cavebottom</object>
-    <object>objects\obj_cavebot_left</object>
-    <object>objects\obj_cavebot_right</object>
-    <object>objects\obj_cavetop_2</object>
-    <object>objects\obj_cave_top_right</object>
-    <object>objects\obj_cave_top_right2</object>
-    <object>objects\obj_cave_top_left</object>
-    <object>objects\obj_cave_top_left2</object>
+    <objects name="cave_parts">
+      <object>objects\obj_cave</object>
+      <object>objects\obj_cavebottom</object>
+      <object>objects\obj_cavebot_left</object>
+      <object>objects\obj_cavebot_right</object>
+      <object>objects\obj_cave_top_right</object>
+      <object>objects\obj_cave_top_left</object>
+    </objects>
     <object>objects\obj_watergen_slow</object>
     <object>objects\obj_water</object>
     <object>objects\obj_tree</object>
