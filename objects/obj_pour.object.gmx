@@ -161,7 +161,7 @@ repeat(abs(hspd)) // same as the vspd, we want to check for a collision at every
           <argument>
             <kind>1</kind>
             <string>if ( obj_bucket.dump = 2 ) {
-obj_tree.increment+=1
+    obj_tree.increment+=1
 }
 
 </string>
