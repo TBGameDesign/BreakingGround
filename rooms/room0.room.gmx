@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
+  <colour>1185563</colour>
   <showcolour>-1</showcolour>
   <code></code>
   <enableViews>0</enableViews>
@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="gradient" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -76,7 +76,6 @@
     <instance objName="obj_cavebottom" x="0" y="0" name="inst_47AE39DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cavebottom" x="0" y="736" name="inst_ECD973C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="576" y="704" name="inst_F266690C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bucket" x="32" y="512" name="inst_F9EEC77E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="&lt;undefined&gt;" x="64" y="64" name="inst_3BF470C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cavebottom" x="0" y="768" name="inst_CF65157B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cavebottom" x="0" y="800" name="inst_842CAEE5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -27,6 +27,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_bottom</background>
+    <background>background\gradient</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
