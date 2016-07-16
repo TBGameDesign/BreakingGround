@@ -230,7 +230,7 @@ if fin=0
         if keyboard_check_pressed(vk_up) // since we are on the ground, we can handle jumping here, so check if we pressed up
         {
             state=jump
-            vspd = -gs*2; // set the vspd to -10, which will make us jump
+            vspd = -gs; // set the vspd to -10, which will make us jump
         }
     }
     if keyboard_check_released(vk_up) // if we released the up button while in the in air
@@ -241,7 +241,7 @@ if fin=0
     if vspd &gt; gs // we don't want to fall too fast, so lets limit our vspd
     {
         
-        vspd = gs*2; // note that if you want to be able to fall fast, you can remove this without affecting the code (but I wouldn't)
+        vspd = gs; // note that if you want to be able to fall fast, you can remove this without affecting the code (but I wouldn't)
     }
     repeat(abs(vspd)) // we want to check for a collision every pixel, so we use a repeat() function to check every pixel while falling
     {
@@ -257,8 +257,8 @@ if fin=0
         }
     }
     hspd = (keyboard_check(vk_right)-keyboard_check(vk_left)) * gs; // a nice little trick that will set our hspd to +10 or -10 depending what button we are holding
-    if (hspd &lt; 0) { state=moveleft;facing=-1;y-=2 } // Going Left
-    if (hspd &gt; 0) { state=moveright;facing=1;y-=2 } // Going Right
+    if (hspd &lt; 0) { state=moveleft;facing=-1 } // Going Left
+    if (hspd &gt; 0) { state=moveright;facing=1} // Going Right
     if (hspd = 0 &amp;&amp; keyboard_check(vk_space)=false &amp;&amp; state&lt;&gt;jump) { state=idle } // Stopped
     repeat(abs(hspd)) // same as the vspd, we want to check for a collision at every pixel we move
     {
