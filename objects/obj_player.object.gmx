@@ -153,6 +153,38 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>frm_spd=0.5
+idle=0
+moveleft=1
+moveright=2
+jump=3
+state=idle
+facing=1
+
+// legs
+//0 -idle
+//1 -jump
+//2-6 walk
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -222,10 +254,12 @@ else // else if we are on the ground
 }
 if keyboard_check_released(vk_up) // if we released the up button while in the in air
 {
+    state=jump
     vspd *= .5; // divide our vspd by 2, creating a smooth type of variable jumping
 }
 if vspd &gt; gs // we don't want to fall too fast, so lets limit our vspd
 {
+    
     vspd = gs; // note that if you want to be able to fall fast, you can remove this without affecting the code (but I wouldn't)
 }
 repeat(abs(vspd)) // we want to check for a collision every pixel, so we use a repeat() function to check every pixel while falling
@@ -240,9 +274,9 @@ repeat(abs(vspd)) // we want to check for a collision every pixel, so we use a r
     }
 }
 hspd = (keyboard_check(vk_right)-keyboard_check(vk_left)) * gs; // a nice little trick that will set our hspd to +10 or -10 depending what button we are holding
-if (hspd &lt; 0) { image_index=1 } // Going Left
-if (hspd &gt; 0) { image_index=2 } // Going Right
-if (hspd = 0) { image_index=0 } // Stopped
+if (hspd &lt; 0) { state=moveleft;facing=-1 } // Going Left
+if (hspd &gt; 0) { state=moveright;facing=1 } // Going Right
+if (hspd = 0) { state=idle } // Stopped
 repeat(abs(hspd)) // same as the vspd, we want to check for a collision at every pixel we move
 {
     if !place_meeting(x+sign(hspd),y,obj_cave) // if there is no block to our left or right
@@ -250,6 +284,49 @@ repeat(abs(hspd)) // same as the vspd, we want to check for a collision at every
         x += sign(hspd); // add to our x value depending on which way we are going
     }
 }
+
+
+//
+/*
+frm_spd=0.5
+idle=0
+moveleft=1
+moveright=2
+jump=3
+state=idle
+*/
+
+if state=idle
+    {
+    if frm&gt;6 frm=0
+    frm_spd=0.5
+    }
+    
+if state=moveleft or state=moveright
+    {
+    frm_spd=1
+    if frm&lt;7 frm=7
+    if frm&gt;10 frm=10
+    }    
+    
+if state=jump
+    {
+    frm_spd=0
+    frm=9
+    }
+    
+frm+=frm_spd
+
+// legs
+//0 -idle
+//1 -jump
+//2-6 walk
+
+draw_sprite_ext(spr_steveBody,frm,x,y,facing,1,0,c_white,1)
+
+
+
+
 </string>
           </argument>
         </arguments>

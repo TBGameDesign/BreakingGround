@@ -216,7 +216,7 @@ if (obj_player.hspd = 0) { image_index=3 off=choose(-8,-7,-6,-5,-4,-3,-2,-1,1,2,
             <string>///Add fill level
 if ( fill &lt; 9 )
 fill += 1;
-with (obj_bucketmeter) {
+with (obj_bucketMeter) {
     image_index+=1
 }
 </string>
