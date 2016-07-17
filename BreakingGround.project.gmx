@@ -40,7 +40,7 @@
       <object>objects\obj_cavebottom</object>
       <object>objects\obj_cave_top_right</object>
       <object>objects\obj_cave_top_left</object>
-      <object>objects\obj_cavebot_left</object>
+      <object>objects\obj_cavebot_right</object>
       <object>objects\obj_cavebot_left</object>
       <object>objects\obj_cave_flat</object>
       <object>objects\obj_caveSloper</object>
