@@ -3,7 +3,7 @@
   <spriteName>spr_pour</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,8 +29,9 @@
 image_speed =  random_range(.05, .2);
 speed = random_range(2, 4);
 direction = random(360);
-friction = 0.01
-gravity = 0.2;
+friction = 0.025
+gravity = 0.25;
+collision = 0;
 </string>
           </argument>
         </arguments>
@@ -53,27 +54,22 @@ gravity = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if ( obj_player.dump = 2 ) {
+            <string>if ( collision = 0 ) {
     obj_tree.increment+=1
-//}
+collision=1
+}
+/// bounce
+move_bounce_all(false);
+
+// slow down the speed
+if (speed &gt; 1) {
+   speed -= 1;
+}
+
 
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="obj_slope">
