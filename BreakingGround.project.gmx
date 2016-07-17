@@ -15,6 +15,8 @@
       <sprite>sprites\spr_cave_bot_left</sprite>
       <sprite>sprites\spr_cave_bigPlat</sprite>
       <sprite>sprites\spr_cave_bot_right</sprite>
+      <sprite>sprites\spr_mask_BR</sprite>
+      <sprite>sprites\spr_mask_BL</sprite>
       <sprite>sprites\spr_cave_smallPlat</sprite>
       <sprite>sprites\spr_caveSloper</sprite>
       <sprite>sprites\spr_caveFlat</sprite>
