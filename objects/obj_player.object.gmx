@@ -79,13 +79,14 @@ pour = 0;
           <argument>
             <kind>1</kind>
             <string>///Platform Movement
+
 right = keyboard_check(vk_right);
 left = keyboard_check(vk_left);
 up = keyboard_check(vk_up);
-pour = keyboard_check(vk_space);
-collect = keyboard_check(vk_alt);
+collect = keyboard_check(vk_space);
+pour = keyboard_check(vk_alt);
 
-if ( fin=0 ) {   
+if fin=0 {    
 ///Horizontal movement and collisions
     if ( right || left ) {       
         hspd += (right - left) * acc;
@@ -100,55 +101,63 @@ if ( fin=0 ) {
 //If Going to the right (combined collision scripts into movement)
     if ( right ) {
         if ( place_meeting(x+hspd, y, obj_cave ) ) {
-            while (!place_meeting(x+1, y, obj_cave) ) {
+            while (!place_meeting(x+1, y, obj_cave ) ) {
                 x += 1;
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_right) ) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_right ) ) {
             x += 2;
             y -= 4;
-            hspd = 0;   
+            hspd = 0;
         }
-        x += hspd;
-        image_xscale = 1;    
-    }
+            x += hspd;
+            image_xscale = 1;    
+        }
     
 //If Going to the left
     if ( left ) {
-        if ( place_meeting(x+hspd, y, obj_cave) ) {
-            while ( !place_meeting(x-1, y, obj_cave) ) {
+        if (place_meeting(x+hspd, y, obj_cave ) ) {
+            while (!place_meeting(x-1, y, obj_cave ) ) {
                 x -= 1;
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_left) ) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_left ) ) {
             x -= 2;
             y -= 4;
-            hspd = 0; 
+            hspd = 0;
         }
-        x += hspd;
-        image_xscale = -1;    
-    }
-
+            x += hspd;
+            image_xscale = -1;    
+        }
+        
 /// vertical colisions and movement
     
 //Vertical Movement
-    if ( up &amp;&amp; place_meeting(x, y+2, obj_cave) ) {
-        vspd = -24; 
+    if ( place_meeting(x, y+3, obj_cave ) || place_meeting(x, y+3, obj_slope ) ) {
+        if ( up ) {
+            vspd = -24;
+        } 
     } else {
         vspd += 2;
     }  
     
 //Vertical Collisions
-    if ( place_meeting(x, y+2, obj_cave) ) {
-        while ( !place_meeting(x, y+2, obj_cave) ) {
+    if (place_meeting(x, y+vspd, obj_cave)) {
+        while (!place_meeting(x, y+sign(vspd), obj_cave ) ) {
             y += sign(vspd);
         }
         vspd = 0;
     }
+    if (place_meeting(x, y+vspd, obj_slope) ) {
+        while (!place_meeting(x, y+sign(vspd), obj_slope ) ) {
+            y += sign(vspd);
+        }
+        vspd = 0;
+    }    
     y += vspd;
-
+  
 //Handle ALT
     if ( pour ) {
         if ( place_meeting(x,y,obj_tree) ) {
@@ -183,7 +192,6 @@ if ( fin=0 ) {
         if frm&gt;6 frm=0
         if 1=round(random(10)) &amp;&amp; frm=6 frm=7
         frm_spd=0.25
-        
     }
         
     if ( right || left ) {
@@ -192,24 +200,22 @@ if ( fin=0 ) {
             frm_spd=0
             frm=8
         }
-        
         if legsfrm&lt;2 legsfrm=2
         if legsfrm&gt;6 legsfrm=2
         legsfrm_spd=0.25
     }    
-    
-    if ( up ) {
-        legsfrm_spd=0
-        legsfrm=1
-        frm_spd=0
-        frm=9
-        
-    }
         
     if ( collect ) {
         frm_spd=1
         if frm&lt;7 frm=7
         if frm&gt;10 frm=10
+    }
+
+    if ( up ) {
+        legsfrm_spd=0
+        legsfrm=1
+        frm_spd=0
+        frm=9
     }
         
     if ( pour ) {
@@ -220,9 +226,7 @@ if ( fin=0 ) {
         if frm&gt;12 frm=11
     }
 
-}//end of if fin=0
-
-//please commit...
+}//end of if fin=0 spd) hspd = spd;
 </string>
           </argument>
         </arguments>
