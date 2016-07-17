@@ -346,7 +346,7 @@ for (a=313;a&lt;360;a+=1) // just to make sure the error doesnt happen
     waterlevel[a]=32;
     }
 
-curr_waterlevel=310;
+curr_waterlevel=2;
 
 increment=0;
 
