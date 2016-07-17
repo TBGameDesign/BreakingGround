@@ -29,8 +29,8 @@
 microSeconds=0
 seconds=0
 minutes=0
-xx=-100
-yy=-100
+xx=x-50
+yy=y-150
 </string>
           </argument>
         </arguments>
