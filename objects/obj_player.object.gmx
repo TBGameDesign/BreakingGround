@@ -56,6 +56,7 @@ right = 0;
 up = 0;
 collect = 0;
 pour = 0;
+idle =0;
 
 /*
 
@@ -88,6 +89,7 @@ left = keyboard_check(vk_left);
 up = keyboard_check(vk_up);
 collect = keyboard_check(vk_space);
 pour = keyboard_check(vk_alt);
+idle = keyboard_check(vk_nokey);
 
 if fin=0 {    
 ///Horizontal movement and collisions
@@ -187,16 +189,19 @@ if fin=0 {
         collectWater = 0;
     }
 
-//Handle all Animations
+//Handle all Animations]
 
-    if ( !right &amp;&amp; !left &amp;&amp; !up &amp;&amp; !collect ) {
+
+
+    if ( idle ) { //( !right &amp;&amp; !left &amp;&amp; !up &amp;&amp; !collect ) {
         legsfrm=0
-        legsfrm_spd=0.5
+        legsfrm_spd=0
         if frm&gt;6 frm=0
         if 1=round(random(10)) &amp;&amp; frm=6 frm=7
         frm_spd=0.25
     }
-        
+    
+       
     if ( right || left ) {
     
         if ( !collect ) {
@@ -212,8 +217,7 @@ if fin=0 {
         frm_spd=1
         if frm&lt;7 frm=7
         if frm&gt;10 frm=10
-        legsfrm_spd=0
-        legsfrm=1
+
     }
 
     if ( up ) {
@@ -227,12 +231,12 @@ if fin=0 {
         if ( !sound_isplaying(sou_emptyHat) &amp;&amp; fill &gt; 0 ) {
             sound_play(sou_emptyHat);
         }   
-        legsfrm=0
-        legsfrm_spd=0
-        frm_spd=0.25
+
+        frm_spd=1
         if frm&lt;11 frm=11
         if frm&gt;12 frm=11
     }
+
 
 }//end of if fin=0 spd) hspd = spd;
 </string>
@@ -264,34 +268,6 @@ if fin=0 {
           <argument>
             <kind>4</kind>
             <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>point_distance(x,y,obj_tree.x,obj_tree.y)</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>100</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
           </argument>
         </arguments>
       </action>
