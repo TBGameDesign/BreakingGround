@@ -221,8 +221,9 @@ acc = 2;
 var right = keyboard_check(vk_right);
 var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
-var up_release = keyboard_check_released(vk_up);
-var down = keyboard_check(vk_down);
+var collect = keyboard_check_pressed(vk_space);
+var pour = keyboard_check_pressed(vk_alt);
+
 
 if fin=0
 {   
@@ -251,6 +252,7 @@ if fin=0
             hspd = 0;
         }
         x += hspd;
+        state = moveright;
         image_xscale = 1;    
     }
     
@@ -268,6 +270,7 @@ if fin=0
             hspd = 0;
         }
         x += hspd;
+        state = moveleft;
         image_xscale = -1;    
     }
 
@@ -281,8 +284,8 @@ if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
         vspd += 2;
 }  
 
-//Vetrical Collisions
-if (place_meeting(x, y+vspd+1, obj_cave)) {
+//Vertical Collisions
+if (place_meeting(x, y+vspd, obj_cave)) {
     while (!place_meeting(x, y+sign(vspd), obj_cave)) {
         y += sign(vspd);
     }
@@ -307,7 +310,12 @@ y += vspd;
 
 }
     
-
+/// Handle ALT
+if ( collect ) {
+ 
+ 
+}
+    
 
 
 
