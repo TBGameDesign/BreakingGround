@@ -350,7 +350,7 @@ waterlevel[319]=32;
 waterlevel[320]=32;
 waterlevel[321]=33;
 
-curr_waterlevel=300;
+curr_waterlevel=0;
 
 increment=0;
 
