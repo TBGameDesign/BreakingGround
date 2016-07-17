@@ -105,7 +105,7 @@ if ( fin=0 ) {
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_right) || place_meeting(x+hspd, y, obj_caveSloper) ) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_right) ) {
             x += 2;
             y -= 4;
             hspd = 0;   
@@ -122,7 +122,7 @@ if ( fin=0 ) {
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_left) || place_meeting(x+hspd, y, obj_caveSlopel) ) {
+        if ( place_meeting(x+hspd, y, obj_cavebot_left) ) {
             x -= 2;
             y -= 4;
             hspd = 0; 
@@ -134,15 +134,15 @@ if ( fin=0 ) {
 /// vertical colisions and movement
     
 //Vertical Movement
-    if ( up &amp;&amp; place_meeting(x, y+1, obj_cave) || up &amp;&amp; place_meeting(x, y+1, obj_slope) ) {
+    if ( up &amp;&amp; place_meeting(x, y+2, obj_cave) ) {
         vspd = -24; 
     } else {
         vspd += 2;
     }  
     
 //Vertical Collisions
-    if ( place_meeting(x, y+1, obj_cave) || place_meeting(x, y+1, obj_slope) ) {
-        while ( !place_meeting(x, y+1, obj_cave) || !place_meeting(x, y+1, obj_slope) ) {
+    if ( place_meeting(x, y+2, obj_cave) ) {
+        while ( !place_meeting(x, y+2, obj_cave) ) {
             y += sign(vspd);
         }
         vspd = 0;
