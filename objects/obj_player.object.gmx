@@ -103,13 +103,12 @@ if ( fin=0 ) {
             while (!place_meeting(x+1, y, obj_cave ) ) {
                 x -= 1;
             }
-            
             hspd = 0;
         }
 
-        if ( place_meeting(x+hspd, y, obj_cave) ) {
-            //x += 3;
-            y -= 8;
+        if ( place_meeting(x+hspd, y, obj_cavebot_right) || place_meeting(x+hspd, y, obj_caveSloper ) ) {
+            x += 2;
+            y -= 4;
             hspd = 0;
             
         }
@@ -119,15 +118,15 @@ if ( fin=0 ) {
     
 //If Going to the left
     if ( left ) {
-        if (place_meeting(x+hspd, y, obj_cave ) ) {
+        if ( place_meeting(x+hspd, y, obj_cave ) ) {
             while (!place_meeting(x-1, y, obj_cave ) ) {
                 x -= 1;
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cave ) ) {
-            //x += 3;
-            y -= 8;
+        if ( place_meeting(x+hspd, y, obj_cavebot_left) || place_meeting(x+hspd, y, obj_caveSlopel ) ) {
+            x += 2;
+            y -= 4;
             hspd = 0;
             
         }
