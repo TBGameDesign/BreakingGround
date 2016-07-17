@@ -340,23 +340,13 @@ waterlevel[309]=32;
 waterlevel[310]=32;
 waterlevel[311]=32;
 waterlevel[312]=32;
-waterlevel[313]=32;
-waterlevel[314]=32;
-waterlevel[315]=32;
-waterlevel[316]=32;
-waterlevel[317]=33;
-waterlevel[318]=33;
-waterlevel[319]=33;
-waterlevel[320]=33;
-waterlevel[321]=33;
-waterlevel[322]=33;
-waterlevel[323]=33;
-for (a=324;a&lt;360;a+=1) // just to make sure the error doesnt happen
+
+for (a=313;a&lt;360;a+=1) // just to make sure the error doesnt happen
     {
-    waterlevel[a]=33;
+    waterlevel[a]=32;
     }
 
-curr_waterlevel=0;
+curr_waterlevel=2;
 
 increment=0;
 

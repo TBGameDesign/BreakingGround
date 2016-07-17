@@ -84,14 +84,14 @@ if seconds&gt;9
     draw_set_color(c_black)
     draw_text(xx,yy,string(minutes)+" : "+string(seconds))
     draw_set_color(c_white)
-    draw_text(xx-2,yy+2,string(minutes)+" : "+string(seconds))
+    draw_text(xx+2,yy+2,string(minutes)+" : "+string(seconds))
     }
 else
     {
     draw_set_color(c_black)
     draw_text(xx,yy,string(minutes)+" : 0"+string(seconds))
     draw_set_color(c_white)
-    draw_text(xx-2,yy+2,string(minutes)+" : 0"+string(seconds))
+    draw_text(xx+2,yy+2,string(minutes)+" : 0"+string(seconds))
     }
 
 microSeconds+=1

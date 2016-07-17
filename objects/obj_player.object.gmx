@@ -301,7 +301,7 @@ if fin=0 {
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>366</string>
+            <string>410</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -487,7 +487,7 @@ if fin=0 {
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>sou_dripCollect</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -520,20 +520,6 @@ if fin=0 {
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
