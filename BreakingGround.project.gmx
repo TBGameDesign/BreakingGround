@@ -79,10 +79,12 @@
     <object>objects\obj_bucketMeter</object>
     <object>objects\obj_title</object>
     <object>objects\obj_pour</object>
+    <object>objects\obj_credits</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomTitle</room>
     <room>rooms\room0</room>
+    <room>rooms\roomCredits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
