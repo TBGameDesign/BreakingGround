@@ -107,7 +107,7 @@ if fin=0
         }
         if ( place_meeting(x+hspd, y, obj_cavebot_left ) ) {
             x += 3;
-            y -= 3;
+            y -= 4;
             hspd = 0;
         }
         x += hspd;
@@ -124,7 +124,7 @@ if fin=0
         }
         if ( place_meeting(x+hspd, y, obj_cavebot_right ) ) {
             x -= 3;
-            y -= 3;
+            y -= 4;
             hspd = 0;
         }
         x += hspd;
@@ -370,9 +370,6 @@ if fin=0
     ///Add fill level
     if ( fill &lt; 9 )
     fill += 1;
-    with (obj_bucketMeter) {
-        image_index+=1
-    }
 }
 </string>
           </argument>
