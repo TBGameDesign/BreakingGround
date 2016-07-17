@@ -33,7 +33,6 @@
   <paths name="paths">
     <path>paths\pathEscape</path>
   </paths>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <objects name="cave_parts">
