@@ -134,9 +134,9 @@ if ( fin=0 ) {
     
 //Vertical Movement
     if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
-            vspd = -24; 
+        vspd = -24; 
     } else {
-            vspd += 2;
+        vspd += 2;
     }  
     
 //Vertical Collisions
