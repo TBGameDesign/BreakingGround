@@ -100,12 +100,11 @@ if ( fin=0 ) {
 //If Going to the right (combined collision scripts into movement)
     if ( right ) {
         if ( place_meeting(x+hspd, y, obj_cave ) ) {
-            while ( !place_meeting(x+1, y, obj_cave ) ) {
+            while (!place_meeting(x+1, y, obj_cave) ) {
                 x += 1;
             }
             hspd = 0;
         }
-
         if ( place_meeting(x+hspd, y, obj_cavebot_right) || place_meeting(x+hspd, y, obj_caveSloper) ) {
             x += 2;
             y -= 4;
@@ -135,21 +134,21 @@ if ( fin=0 ) {
 /// vertical colisions and movement
     
 //Vertical Movement
-    if ( up &amp;&amp; place_meeting(x, y+1, obj_cave) ) {
+    if ( up &amp;&amp; place_meeting(x, y+1, obj_cave) || up &amp;&amp; place_meeting(x, y+1, obj_slope) ) {
         vspd = -24; 
     } else {
         vspd += 2;
     }  
     
 //Vertical Collisions
-    if (place_meeting(x, y+vspd, obj_cave)) {
-        while ( !place_meeting(x, y+sign(vspd), obj_cave) ) {
+    if ( place_meeting(x, y+1, obj_cave) || place_meeting(x, y+1, obj_slope) ) {
+        while ( !place_meeting(x, y+1, obj_cave) || !place_meeting(x, y+1, obj_slope) ) {
             y += sign(vspd);
         }
         vspd = 0;
     }
     y += vspd;
-    
+
 //Handle ALT
     if ( pour ) {
         if ( place_meeting(x,y,obj_tree) ) {
