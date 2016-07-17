@@ -52,6 +52,9 @@
   <paths name="paths">
     <path>paths\pathEscape</path>
   </paths>
+  <fonts name="fonts">
+    <font>fonts\font_timer</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <objects name="cave_parts">
