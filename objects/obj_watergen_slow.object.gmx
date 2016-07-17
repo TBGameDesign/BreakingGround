@@ -82,7 +82,7 @@ lastspawnpoint = 0
             <string>spawnpoint = irandom(droppoints);
 
 if (spawnpoint = lastspawnpoint) { // if it want to spawn in the same spot again reroll
-spawnpoint = irandom(droppoints);
+    spawnpoint = irandom(droppoints);
 }
 
 spawnspot = spawnpoint * 32 + x;
@@ -110,7 +110,7 @@ lastspawnpoint = spawnpoint;
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>8</string>
+            <string>7</string>
           </argument>
           <argument>
             <kind>4</kind>
