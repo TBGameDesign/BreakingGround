@@ -379,6 +379,7 @@ if fin=0 {
     ///Add fill level
     if ( fill &lt; 9 )
     fill += 1;
+    audio_play_sound(sou_dripCollect,2,0)
 }
 </string>
           </argument>

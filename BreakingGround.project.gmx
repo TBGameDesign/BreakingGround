@@ -7,7 +7,10 @@
   <NewExtensions>
     <extension index="0">extensions\Curse Engine</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sou_dripCollect</sound>
+    <sound>sound\sou_dripGround</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_steveBody</sprite>
@@ -28,6 +31,7 @@
       <sprite>sprites\spr_mask_sloper</sprite>
       <sprite>sprites\spr_mask_slopel</sprite>
       <sprite>sprites\spr_caveFlat</sprite>
+      <sprite>sprites\spr_cave_halfRock</sprite>
       <sprite>sprites\spr_caveSlopel</sprite>
       <sprite>sprites\spr_splatFoliage</sprite>
     </sprites>
@@ -50,6 +54,7 @@
       <object>objects\obj_cave</object>
       <object>objects\pbj_caveFoliage</object>
       <object>objects\obj_cavebottom</object>
+      <object>objects\obj_caveHalf</object>
       <object>objects\obj_CaveSurface</object>
       <object>objects\obj_cave_top_right</object>
       <object>objects\obj_cave_top_left</object>

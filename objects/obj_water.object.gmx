@@ -126,6 +126,7 @@
           <argument>
             <kind>1</kind>
             <string>if ( collision = 1 ) {
+    audio_play_sound(sou_dripGround,1,0)
     instance_destroy()
 }
 </string>
