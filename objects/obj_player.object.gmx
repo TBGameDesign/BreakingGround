@@ -232,7 +232,7 @@ if fin=0 {
             sound_play(sou_emptyHat);
         }   
 
-        frm_spd=1
+        frm_spd=0.125
         if frm&lt;11 frm=11
         if frm&gt;12 frm=11
     }
