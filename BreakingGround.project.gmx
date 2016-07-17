@@ -15,15 +15,21 @@
     </sprites>
     <sprites name="Cave">
       <sprite>sprites\spr_cavebottom</sprite>
+      <sprite>sprites\spr_FullBlockSurface</sprite>
       <sprite>sprites\spr_cave_bot_left</sprite>
       <sprite>sprites\spr_cave_bigPlat</sprite>
+      <sprite>sprites\spr_mask_bigPlat</sprite>
       <sprite>sprites\spr_cave_bot_right</sprite>
       <sprite>sprites\spr_mask_BR</sprite>
       <sprite>sprites\spr_mask_BL</sprite>
       <sprite>sprites\spr_cave_smallPlat</sprite>
+      <sprite>sprites\spr_mask_smallPlat</sprite>
       <sprite>sprites\spr_caveSloper</sprite>
+      <sprite>sprites\spr_mask_sloper</sprite>
+      <sprite>sprites\spr_mask_slopel</sprite>
       <sprite>sprites\spr_caveFlat</sprite>
       <sprite>sprites\spr_caveSlopel</sprite>
+      <sprite>sprites\spr_splatFoliage</sprite>
     </sprites>
     <sprite>sprites\spr_bucketfill</sprite>
     <sprite>sprites\spr_waterdrop</sprite>
@@ -38,12 +44,13 @@
   <paths name="paths">
     <path>paths\pathEscape</path>
   </paths>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_player</object>
     <objects name="cave_parts">
       <object>objects\obj_cave</object>
+      <object>objects\pbj_caveFoliage</object>
       <object>objects\obj_cavebottom</object>
+      <object>objects\obj_CaveSurface</object>
       <object>objects\obj_cave_top_right</object>
       <object>objects\obj_cave_top_left</object>
       <object>objects\obj_cave_flat</object>

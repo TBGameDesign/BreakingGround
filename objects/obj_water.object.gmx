@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>irandom_range(8,16)</string>
+            <string>irandom_range(5,12)</string>
           </argument>
         </arguments>
       </action>

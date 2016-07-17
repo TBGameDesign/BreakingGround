@@ -3,23 +3,23 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>1</colkind>
-  <coltolerance>254</coltolerance>
-  <sepmasks>0</sepmasks>
+  <colkind>0</colkind>
+  <coltolerance>0</coltolerance>
+  <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>127</bbox_right>
-  <bbox_top>0</bbox_top>
-  <bbox_bottom>127</bbox_bottom>
+  <bbox_left>3</bbox_left>
+  <bbox_right>73</bbox_right>
+  <bbox_top>4</bbox_top>
+  <bbox_bottom>30</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>128</width>
-  <height>128</height>
+  <width>77</width>
+  <height>79</height>
   <frames>
-    <frame index="0">images\spr_caveSlopel_0.png</frame>
+    <frame index="0">images\spr_mask_bigPlat_0.png</frame>
   </frames>
 </sprite>
