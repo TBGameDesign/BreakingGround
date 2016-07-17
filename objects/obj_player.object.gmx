@@ -48,6 +48,13 @@ hspd = 0;
 vspd = 0;
 grav = 2;
 gs = 200;
+
+//kayboard variables
+left = 0;
+right = 0;
+up = 0;
+collect = 0;
+pour = 0;
 </string>
           </argument>
         </arguments>
@@ -71,11 +78,11 @@ gs = 200;
           <argument>
             <kind>1</kind>
             <string>///Platform Movement
-var right = keyboard_check(vk_right);
-var left = keyboard_check(vk_left);
-var up = keyboard_check(vk_up);
-var collect = keyboard_check(vk_space);
-var pour = keyboard_check(vk_alt);
+right = keyboard_check(vk_right);
+left = keyboard_check(vk_left);
+up = keyboard_check(vk_up);
+collect = keyboard_check(vk_space);
+pour = keyboard_check(vk_alt);
 
 if fin=0
 {   

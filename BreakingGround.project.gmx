@@ -18,7 +18,6 @@
       <sprite>sprites\spr_cave_top_right</sprite>
       <sprite>sprites\spr_cavetop_2</sprite>
     </sprites>
-    <sprite>sprites\spr_bucket</sprite>
     <sprite>sprites\spr_bucketfill</sprite>
     <sprite>sprites\spr_waterdrop</sprite>
     <sprite>sprites\spr_pour</sprite>
@@ -48,7 +47,6 @@
     <object>objects\obj_watergen_slow</object>
     <object>objects\obj_water</object>
     <object>objects\obj_tree</object>
-    <object>objects\obj_bucket</object>
     <object>objects\obj_pour</object>
     <object>objects\obj_light</object>
     <object>objects\obj_bucketMeter</object>
