@@ -48,7 +48,7 @@ hspd = 0;
 vspd = 0;
 grav = 2;
 gs = 200;
-yplus = 0;
+
 
 //kayboard variables
 left = 0;
@@ -101,17 +101,17 @@ if ( fin=0 ) {
     if ( right ) {
         if ( place_meeting(x+hspd, y, obj_cave ) ) {
             while (!place_meeting(x+1, y, obj_cave ) ) {
-                x += 1;
+                x -= 1;
             }
             
             hspd = 0;
         }
 
-        if ( place_meeting(x+hspd, y, obj_cavebot_left ) ) {
-            //x += 1;
-            y -= 4+yplus;
+        if ( place_meeting(x+hspd, y, obj_cave) ) {
+            //x += 3;
+            y -= 8;
             hspd = 0;
-            yplus+=1;
+            
         }
         x += hspd;
         image_xscale = 1;    
@@ -125,11 +125,11 @@ if ( fin=0 ) {
             }
             hspd = 0;
         }
-        if ( place_meeting(x+hspd, y, obj_cavebot_right ) ) {
-            //x -= 1;
-            y -= 4+yplus;
+        if ( place_meeting(x+hspd, y, obj_cave ) ) {
+            //x += 3;
+            y -= 8;
             hspd = 0;
-            yplus+=1;
+            
         }
         x += hspd;
         image_xscale = -1;    
@@ -187,7 +187,7 @@ if ( fin=0 ) {
         if frm&gt;6 frm=0
         if 1=round(random(10)) &amp;&amp; frm=6 frm=7
         frm_spd=0.25
-        yplus=0
+        
     }
         
     if ( right || left ) {
@@ -207,7 +207,7 @@ if ( fin=0 ) {
         legsfrm=1
         frm_spd=0
         frm=9
-        yplus=0
+        
     }
         
     if ( collect ) {
@@ -397,29 +397,6 @@ if ( fin=0 ) {
         <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_cave">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>yplus+=1
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">
