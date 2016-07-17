@@ -56,6 +56,9 @@ right = 0;
 up = 0;
 collect = 0;
 pour = 0;
+
+/*
+
 </string>
           </argument>
         </arguments>
