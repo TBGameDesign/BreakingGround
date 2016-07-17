@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_mask_left</maskName>
+  <maskName>spr_cave_bot_left</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
