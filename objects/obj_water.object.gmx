@@ -108,6 +108,10 @@ repeat (irandom_range(5, 8)) {
      
      instance_create(x+rand_x, y+rand_y, obj_pour)
 }
+
+if ( !sound_isplaying(sou_dripGround) ) {
+            sound_play(sou_dripGround);
+}
 </string>
           </argument>
         </arguments>
@@ -150,6 +154,10 @@ repeat (irandom_range(5, 8)) {
      var rand_y = irandom_range(-4, 4);
      
      instance_create(x+rand_x, y+rand_y, obj_pour)
+}
+
+if ( !sound_isplaying(sou_dripGround) ) {
+            sound_play(sou_dripGround);
 }
 </string>
           </argument>
@@ -197,6 +205,10 @@ repeat (irandom_range(5, 8)) {
          instance_create(x+rand_x, y+rand_y, obj_pour)
     }
 
+}
+
+if ( !sound_isplaying(sou_dripGround) ) {
+            sound_play(sou_dripGround);
 }
 </string>
           </argument>
