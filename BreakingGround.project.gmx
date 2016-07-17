@@ -13,10 +13,12 @@
     <sprites name="Cave">
       <sprite>sprites\spr_cavebottom</sprite>
       <sprite>sprites\spr_cave_bot_left</sprite>
-      <sprite>sprites\spr_cave_top_left</sprite>
+      <sprite>sprites\spr_cave_bigPlat</sprite>
       <sprite>sprites\spr_cave_bot_right</sprite>
-      <sprite>sprites\spr_cave_top_right</sprite>
-      <sprite>sprites\spr_cavetop_2</sprite>
+      <sprite>sprites\spr_cave_smallPlat</sprite>
+      <sprite>sprites\spr_caveSloper</sprite>
+      <sprite>sprites\spr_caveFlat</sprite>
+      <sprite>sprites\spr_caveSlopel</sprite>
     </sprites>
     <sprite>sprites\spr_bucketfill</sprite>
     <sprite>sprites\spr_waterdrop</sprite>
@@ -42,6 +44,9 @@
       <object>objects\obj_cave_top_left</object>
       <object>objects\obj_cavebot_right</object>
       <object>objects\obj_cavebot_left</object>
+      <object>objects\obj_cave_flat</object>
+      <object>objects\obj_caveSloper</object>
+      <object>objects\obj_caveSlopel</object>
     </objects>
     <object>objects\obj_watergen_slow</object>
     <object>objects\obj_water</object>
