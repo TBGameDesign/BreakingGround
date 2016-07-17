@@ -164,7 +164,7 @@ if fin=0 {
             if ( fill &gt; 0 ) {
                 fill -= 1
                 with ( obj_tree ) {
-                    curr_waterlevel+=4;
+                    curr_waterlevel+=3;
                 }
             }   
         } else {
