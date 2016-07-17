@@ -25,25 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>collectWater=0
-dump=0
-fill=6
-frm=0
+            <string>///Init Player
+
+collectWater=0
+dump = 0;
+fill = 0;
+fin = 0;
+frm = 0;
 frm_spd=0.5
-// Enum state machine
-idle=0
-moveleft=1
-moveright=2
-jump=3
-empty=4
-//state
-state=idle
-// facing 
-facing=1
 
 // legs
-    legsfrm=0
-    legsfrm_spd=0
+    legsfrm = 0
+    legsfrm_spd = 0
 //0 -idle
 //1 -jump
 //2-6 walk
@@ -51,151 +44,11 @@ facing=1
 //Movement
 spd = 8;
 acc = 2;
+hspd = 0;
+vspd = 0;
+grav = 2;
+gs = 200;
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>hspd</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspd</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>grav</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>gs</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>200</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>fin</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>test</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -221,13 +74,12 @@ acc = 2;
 var right = keyboard_check(vk_right);
 var left = keyboard_check(vk_left);
 var up = keyboard_check(vk_up);
-var collect = keyboard_check_pressed(vk_space);
-var pour = keyboard_check_pressed(vk_alt);
-
+var collect = keyboard_check(vk_space);
+var pour = keyboard_check(vk_alt);
 
 if fin=0
 {   
-    ///Horizontal movement and collisions
+///Horizontal movement and collisions
     if ( right || left ) {       
         hspd += (right - left) * acc;
         if (hspd &gt; spd) hspd = spd;
@@ -238,7 +90,7 @@ if fin=0
         }
     }
     
-    //If Going to the right (combined collision scripts into movement)
+//If Going to the right (combined collision scripts into movement)
     if ( right ) {
         if ( place_meeting(x+hspd, y, obj_cave ) ) {
             while (!place_meeting(x+1, y, obj_cave ) ) {
@@ -252,11 +104,10 @@ if fin=0
             hspd = 0;
         }
         x += hspd;
-        state = moveright;
         image_xscale = 1;    
     }
     
-    //If Going to the left
+//If Going to the left
     if ( left ) {
         if (place_meeting(x+hspd, y, obj_cave ) ) {
             while (!place_meeting(x-1, y, obj_cave ) ) {
@@ -270,199 +121,96 @@ if fin=0
             hspd = 0;
         }
         x += hspd;
-        state = moveleft;
         image_xscale = -1;    
     }
 
 /// vertical colisions and movement
-
+    
 //Vertical Movement
-
-if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
-        vspd = -24; 
-} else {
-        vspd += 2;
-}  
-
+    if ( up &amp;&amp; place_meeting(x, y+1, obj_cave ) ) {
+            vspd = -24; 
+    } else {
+            vspd += 2;
+    }  
+    
 //Vertical Collisions
-if (place_meeting(x, y+vspd, obj_cave)) {
-    while (!place_meeting(x, y+sign(vspd), obj_cave)) {
-        y += sign(vspd);
+    if (place_meeting(x, y+vspd, obj_cave)) {
+        while (!place_meeting(x, y+sign(vspd), obj_cave)) {
+            y += sign(vspd);
+        }
+        vspd = 0;
     }
-    vspd = 0;
-}
-y += vspd;
-
-
-///Handle Spacebar
+    y += vspd;
+    
+//Handle ALT
+    if ( pour ) {
+        if ( place_meeting(x,y,obj_tree) ) {
+            if ( fill &gt; 0 ) {
+                fill -= 1
+                with ( obj_tree ) {
+                    curr_waterlevel+=4;
+                }
+            }   
+        } else {
+            if ( fill &gt; 0 ) {
+                fill -= 1;
+                repeat(10) {
+                    instance_create(x, y-15, obj_pour)
+                }
+            }
+        }
+    }
         
-    if ( keyboard_check_pressed(vk_space) &amp;&amp; place_meeting(x,y,obj_tree) ) {
-        dump = 1
-        state=empty   
-    }
-    if ( keyboard_check_pressed(vk_space) &amp;&amp; !place_meeting(x,y,obj_tree) ) {
-        dump = 2
-        state=empty
-    }
-    if ( keyboard_check_released(vk_space)) {
-        dump = 0
+// Handle Spacebar
+    if ( collect ) {
+        collectWater = 1;
+    } else {
+        collectWater = 0;
     }
 
-}
-    
-/// Handle ALT
-if ( collect ) {
- 
- 
-}
-    
+//Handle all Animations
 
-
-
-
-
-
-
-
-
-/*
-    gs=10-(fill*0.5) // grounspeed calc - max speed reduced is four with this calc.. speed of 6 is lowest can go before can jump on stuff
-    
-    if !place_meeting(x,y+1,obj_cave) // if we are in the air
-    {
-        grav = .5; // set the gravity to .5
-        vspd += grav; // add .5 to our vspd once every step
-    }
-    else // else if we are on the ground
-    {
-        grav = 0; // set the gravity to 0
-        vspd = 0; // set vspd to 0 to stop moving
-        if keyboard_check_pressed(vk_up) // since we are on the ground, we can handle jumping here, so check if we pressed up
-        {
-            state=jump
-            vspd = -gs*2; // set the vspd to -10, which will make us jump
-        }
-    }
-    if keyboard_check_released(vk_up) // if we released the up button while in the in air
-    {
-        state=idle
-        vspd *= 1; // divide our vspd by 2, creating a smooth type of variable jumping
-    }
-    if vspd &gt; gs // we don't want to fall too fast, so lets limit our vspd
-    {
-        
-        vspd = gs*2; // note that if you want to be able to fall fast, you can remove this without affecting the code (but I wouldn't)
-    }
-    repeat(abs(vspd)) // we want to check for a collision every pixel, so we use a repeat() function to check every pixel while falling
-    {
-        if !place_meeting(x,y+sign(vspd),obj_cave) // vspd can be negative or positive, so we check 1 pixel above or below, depending on which direction we are going
-        {
-            y += sign(vspd); // add to our y value 1 pixel at a time, letting use check for a collision every pixel
-        }
-        else // else if we hit a block
-        {
-        state=idle;frm=0
-            vspd = 0 // stop moving vertically
-            
-        }
-    }
-    hspd = (keyboard_check(vk_right)-keyboard_check(vk_left)) * gs; // a nice little trick that will set our hspd to +10 or -10 depending what button we are holding
-    if (hspd &lt; 0) { state=moveleft;facing=-1;y-=2 } // Going Left
-    if (hspd &gt; 0) { state=moveright;facing=1;y-=2 } // Going Right
-    if (hspd = 0 &amp;&amp; keyboard_check(vk_space)=false &amp;&amp; state&lt;&gt;jump) { state=idle } // Stopped
-    repeat(abs(hspd)) // same as the vspd, we want to check for a collision at every pixel we move
-    {
-        if !place_meeting(x+sign(hspd),y,obj_cave) // if there is no block to our left or right
-        {
-            x += sign(hspd); // add to our x value depending on which way we are going
-        }
-    }   
-
-*/    
-    //
-    /*
-    frm_spd=0.5
-    idle=0
-    moveleft=1
-    moveright=2
-    jump=3
-    state=idle
-    */
-    // legs
-    
-    //0 -idle
-    //1 -jump
-    //2-6 walk
-/*    
-    if state=idle and collectWater=0
-        {
+    if ( !right &amp;&amp; !left &amp;&amp; !up &amp;&amp; !collect ) {
         legsfrm=0
         legsfrm_spd=0.5
         if frm&gt;6 frm=0
         if 1=round(random(10)) &amp;&amp; frm=6 frm=7
         frm_spd=0.25
+    }
         
-        }
-        
-    if state=moveleft or state=moveright
-        {
-        if collectWater=0
-            {
+    if ( right || left ) {
+    
+        if ( !collect ) {
             frm_spd=0
             frm=8
-            }
+        }
         if legsfrm&lt;2 legsfrm=2
         if legsfrm&gt;6 legsfrm=2
         legsfrm_spd=0.25
-    
-        }    
+    }    
         
-        if keyboard_check_direct(vk_alt)
-            {
-            frm_spd=1
-            if frm&lt;7 frm=7
-            if frm&gt;10 frm=10
-            collectWater=1
-            }
-        else
-            {
-            collectWater=0
-            }
-    if state=jump
-        {
+    if ( collect ) {
+        frm_spd=1
+        if frm&lt;7 frm=7
+        if frm&gt;10 frm=10
+    }
+
+    if ( up ) {
         legsfrm_spd=0
         legsfrm=1
         frm_spd=0
         frm=9
-        }
+    }
         
-    if state=empty
-        {
+    if ( pour ) {
         legsfrm=0
         legsfrm_spd=0
         frm_spd=0.25
         if frm&lt;11 frm=11
         if frm&gt;12 frm=11
-                /// Empty Bucket
-            if ( fill &gt; 0 ) {
-            //obj_tree.curr_waterlevel+=1;
-                fill-=1;
-             
-                repeat(10) {
-                    {instance_create(x, y-15, obj_pour)}
-                }
-            }
-        }
-        
-    
-    
-    // legs
-    //0 -idle
-    //1 -jump
-    //2-6 walk
-    
-}      //end of if fin=0
+    }
 
+}//end of if fin=0
 </string>
           </argument>
         </arguments>
@@ -611,8 +359,7 @@ if ( collect ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if collectWater=1
-{
+            <string>if ( collectWater = 1 ) {
     ///Add fill level
     if ( fill &lt; 9 )
     fill += 1;
