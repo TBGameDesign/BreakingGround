@@ -238,7 +238,7 @@ if fin=0 {
     }
 
 
-}//end of if fin=0 spd) hspd = spd;
+}//end of if fin=0
 </string>
           </argument>
         </arguments>
