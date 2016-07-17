@@ -78,6 +78,7 @@
     <object>objects\obj_light</object>
     <object>objects\obj_bucketMeter</object>
     <object>objects\obj_title</object>
+    <object>objects\obj_pour</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomTitle</room>
