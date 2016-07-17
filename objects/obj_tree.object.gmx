@@ -406,7 +406,7 @@ image_index=size;
             <string>/// Tree Shrinking 
 // Every 10 seconds reduce tree waterlevel by 1, then reset alarm
 if ( curr_waterlevel != 0 &amp;&amp; size != 0 ) { // Dont shrink if your already shrunk!
-curr_waterlevel-=shrink; // Shrink factor Grows over time based on size
+    curr_waterlevel-=shrink; // Shrink factor Grows over time based on size
 }
 alarm[11]=600 // Shrink again in 20 seconds
 </string>
@@ -467,8 +467,8 @@ image_index=size;
 
 
 // the droplets of water from bucket can grow the tree too, but not by much 1/20th
-if ( increment &gt;= 1 &amp;&amp; obj_player.fin=0 ) {
-    curr_waterlevel+=2;
+if ( increment &gt;= 10 ) {
+    curr_waterlevel+=4;
     increment=0;
 }
 
@@ -486,7 +486,7 @@ if ( curr_waterlevel &gt;= 60 &amp;&amp; curr_waterlevel &lt; 140) {
 if ( curr_waterlevel &gt;= 140 &amp;&amp; curr_waterlevel &lt; 250) {
     shrink=4
 }
-if ( curr_waterlevel &gt;= 250 &amp;&amp; curr_waterlevel &lt;= 360) {
+if ( curr_waterlevel &gt;= 250 ) {
     shrink=5
 }
 
@@ -501,7 +501,7 @@ if ( waterlevel[curr_waterlevel] &lt; size ) {
         alarm[0]=1 // Shrink Immediatly
 }
 
-if ( curr_waterlevel &gt;= 315 ) {
+if ( curr_waterlevel &gt;= 320 ) {
     obj_player.fin=1
 }
 

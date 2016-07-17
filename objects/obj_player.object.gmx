@@ -84,8 +84,7 @@ up = keyboard_check(vk_up);
 collect = keyboard_check(vk_space);
 pour = keyboard_check(vk_alt);
 
-if fin=0
-{   
+if ( fin=0 ) {   
 ///Horizontal movement and collisions
     if ( right || left ) {       
         hspd += (right - left) * acc;
@@ -191,22 +190,23 @@ if fin=0
             frm_spd=0
             frm=8
         }
+        
         if legsfrm&lt;2 legsfrm=2
         if legsfrm&gt;6 legsfrm=2
         legsfrm_spd=0.25
     }    
-        
-    if ( collect ) {
-        frm_spd=1
-        if frm&lt;7 frm=7
-        if frm&gt;10 frm=10
-    }
-
+    
     if ( up ) {
         legsfrm_spd=0
         legsfrm=1
         frm_spd=0
         frm=9
+    }
+        
+    if ( collect ) {
+        frm_spd=1
+        if frm&lt;7 frm=7
+        if frm&gt;10 frm=10
     }
         
     if ( pour ) {
