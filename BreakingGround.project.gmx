@@ -33,6 +33,7 @@
       <sprite>sprites\spr_mask_sloper</sprite>
       <sprite>sprites\spr_mask_slopel</sprite>
       <sprite>sprites\spr_caveFlat</sprite>
+      <sprite>sprites\spr_maskFlat</sprite>
       <sprite>sprites\spr_cave_halfRock</sprite>
       <sprite>sprites\spr_caveSlopel</sprite>
       <sprite>sprites\spr_splatFoliage</sprite>
