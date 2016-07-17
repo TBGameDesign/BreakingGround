@@ -97,10 +97,9 @@
     <instance objName="obj_cavebottom" x="0" y="384" name="inst_E9FE40C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cavebottom" x="0" y="512" name="inst_B4DB8F80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cavebottom" x="0" y="640" name="inst_152F68D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_watergen_slow" x="1408" y="64" name="inst_971CF1C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_watergen_slow" x="2368" y="64" name="inst_9528E0B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_watergen_slow" x="3328" y="64" name="inst_99A0024C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_watergen_slow" x="3136" y="64" name="inst_BB915C3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_watergen_slow" x="1408" y="136" name="inst_971CF1C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_watergen_slow" x="2384" y="136" name="inst_9528E0B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_watergen_slow" x="3344" y="136" name="inst_99A0024C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cave_top_left" x="1568" y="608" name="inst_F8FBF219" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cave_top_left" x="1536" y="896" name="inst_98239C12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cave_top_left" x="1992" y="880" name="inst_1146FD39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -119,7 +118,7 @@
     <instance objName="obj_cave_top_right" x="3200" y="704" name="inst_13F4665E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cave_top_right" x="2208" y="576" name="inst_39D92D55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cave_top_right" x="1216" y="736" name="inst_1727D328" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="896" y="224" name="inst_844FFEEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="528" y="88" name="inst_844FFEEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bucketMeter" x="132" y="154" name="inst_A74C35AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_CaveSurface" x="128" y="768" name="inst_BBFB008C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_CaveSurface" x="256" y="768" name="inst_13AE256B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

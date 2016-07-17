@@ -10,6 +10,8 @@
   <sounds name="sound">
     <sound>sound\sou_dripCollect</sound>
     <sound>sound\sou_dripGround</sound>
+    <sound>sound\sou_music</sound>
+    <sound>sound\sou_emptyHat</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -41,6 +43,7 @@
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_light</sprite>
     <sprite>sprites\spr_spider</sprite>
+    <sprite>sprites\spr_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\gradient</background>
@@ -71,8 +74,10 @@
     <object>objects\obj_pour</object>
     <object>objects\obj_light</object>
     <object>objects\obj_bucketMeter</object>
+    <object>objects\obj_title</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\roomTitle</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
