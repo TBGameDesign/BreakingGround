@@ -471,13 +471,6 @@ image_index=size;
             <kind>1</kind>
             <string>/// Always check for growth
 
-
-// the droplets of water from bucket can grow the tree too, but not by much 1/20th
-if ( increment &gt;= 10 ) {
-    curr_waterlevel+=4;
-    increment=0;
-}
-
 // based on curr_waterlevel, which effects size, raise the shrinkage to accomodate amount if water
 
 if ( curr_waterlevel &gt;= 0 &amp;&amp; curr_waterlevel &lt; 10) {
