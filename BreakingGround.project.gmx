@@ -33,6 +33,7 @@
       <sprite>sprites\spr_mask_sloper</sprite>
       <sprite>sprites\spr_mask_slopel</sprite>
       <sprite>sprites\spr_caveFlat</sprite>
+      <sprite>sprites\spr_maskFlat</sprite>
       <sprite>sprites\spr_cave_halfRock</sprite>
       <sprite>sprites\spr_caveSlopel</sprite>
       <sprite>sprites\spr_splatFoliage</sprite>
@@ -71,7 +72,6 @@
     <object>objects\obj_watergen_slow</object>
     <object>objects\obj_water</object>
     <object>objects\obj_tree</object>
-    <object>objects\obj_pour</object>
     <object>objects\obj_light</object>
     <object>objects\obj_bucketMeter</object>
     <object>objects\obj_title</object>

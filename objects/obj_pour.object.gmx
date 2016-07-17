@@ -3,7 +3,11 @@
   <spriteName>spr_pour</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
+<<<<<<< HEAD
   <depth>-1</depth>
+=======
+  <depth>-1000</depth>
+>>>>>>> c6d9a65d2a35d76135e1df0e2d64296e30dd4a85
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
