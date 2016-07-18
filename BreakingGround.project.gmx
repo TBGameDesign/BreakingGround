@@ -10,7 +10,6 @@
   <sounds name="sound">
     <sound>sound\sou_dripCollect</sound>
     <sound>sound\sou_dripGround</sound>
-    <sound>sound\sou_music</sound>
     <sound>sound\sou_emptyHat</sound>
   </sounds>
   <sprites name="sprites">
